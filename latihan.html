@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+        <style>
+            header {
+                height: 60px;
+                background-color: rgb(134, 218, 190);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 20px; /* Tambahkan padding untuk ruang di antara elemen */
+            }
+            .navbar {
+                display: flex;
+            }
+            .navbar ul {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar ul li {
+                list-style: none;
+                margin: 0 10px;
+            }
+            .navbar ul li a {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                text-decoration: none;
+            }
+            .bx-menu {
+                display: flex;
+                justify-content: flex-end;
+                text-align: end;
+                cursor: pointer;
+                display: none;
+            }
+
+            @media (max-width: 600px) {
+                body {
+                    background-color: #ff0000;
+                }
+                header {
+                    justify-content: end;
+                }
+                .navbar {
+                    display: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 78.5px;
+                    padding: 25px;
+                    left: 0;
+                    width: 100%;
+                    background-color: #ffffff;
+                    z-index: 2;
+                }
+                .bx-menu {
+                    display: flex;
+                    justify-content: flex-end;
+                    text-align: end;
+                }
+                .navbar ul {
+                    flex-direction: column;
+                }
+                .navbar ul li {
+                    margin-bottom: 35px;
+                }
+                .navbar ul li a {
+                    display: block;
+                    width: 100%;
+                }
+                .navbar.active {
+                    display: flex;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navbar" id="navbar">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </header>
+
+        <script>
+            document.getElementById("menu-icon").addEventListener("click", function () {
+                const navbar = document.getElementById("navbar");
+
+                navbar.classList.toggle("active");
+            });
+        </script>
+    </body>
+</html>
